@@ -59,7 +59,6 @@ const RandomPassword = () => {
       <Form.Item label="字符" name="_charater">
         <Checkbox.Group
           options={options}
-          defaultValue={['Apple']}
           onChange={onChange}
         />
       </Form.Item>
