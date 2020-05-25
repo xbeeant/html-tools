@@ -6,6 +6,7 @@ export default {
   targets: {
     ie: 11,
   },
+  history: 'hash',
   hash: true,
   routes: [
     {
