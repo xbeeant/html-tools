@@ -6,6 +6,7 @@ export default {
   targets: {
     ie: 11,
   },
+  hash: true,
   routes: [
     {
       path: '/',
