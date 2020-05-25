@@ -3,6 +3,9 @@
 export default {
   treeShaking: true,
   outputPath: 'docs',
+  targets: {
+    ie: 11,
+  },
   routes: [
     {
       path: '/',
@@ -19,8 +22,7 @@ export default {
       dva: false,
       dynamicImport: { webpackChunkName: true },
       title: 'fh-helper',
-      dll: true,
-
+      dll: false,
       routes: {
         exclude: [
           /components\//,
