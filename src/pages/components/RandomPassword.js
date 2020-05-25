@@ -10,8 +10,11 @@ const tailLayout = {
 };
 
 const RandomPassword = () => {
-  const [selected, setSelected] = useState(['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0123456789']);
-  const [_length, setLength] = useState(16);
+  const [selected, setSelected] = useState([
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'abcdefghijklmnopqrstuvwxyz',
+    '0123456789',
+  ]);
   const [_num, setNum] = useState(1);
   const [form] = Form.useForm();
 
@@ -19,20 +22,20 @@ const RandomPassword = () => {
     randomStr(values._length);
   };
 
-  const randomStr = (_length) => {
-    let chars = selected.join("");
+  const randomStr = _length => {
+    let chars = selected.join('');
     let result = '';
     for (let _n = _num; _n > 0; --_n) {
       for (let i = _length; i > 0; --i) {
-        result += chars[Math.floor(Math.random() * chars.length)]
+        result += chars[Math.floor(Math.random() * chars.length)];
       }
-      result += "\n";
+      result += '\n';
     }
 
     form.setFieldsValue({
-      "_result": result,
-    })
-  }
+      _result: result,
+    });
+  };
 
   const options = [
     { label: 'A-Z', value: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
@@ -41,7 +44,7 @@ const RandomPassword = () => {
     { label: '!@#$%^&*', value: '!@#$%^&*' },
   ];
 
-  const onChange = (checkedValues) => {
+  const onChange = checkedValues => {
     setSelected(checkedValues);
   };
 
@@ -50,32 +53,27 @@ const RandomPassword = () => {
       {...layout}
       form={form}
       name="randomPasswordForm"
-      initialValues={{ '_charater': selected, '_length': _length, "_num": 1 }}
+      initialValues={{ _charater: selected, _length: '16', _num: 1 }}
       onFinish={onFinish}
     >
-      <Form.Item
-        label="字符"
-        name="_charater"
-      >
-        <Checkbox.Group options={options} defaultValue={['Apple']} onChange={onChange}/>
+      <Form.Item label="字符" name="_charater">
+        <Checkbox.Group
+          options={options}
+          defaultValue={['Apple']}
+          onChange={onChange}
+        />
       </Form.Item>
 
-      <Form.Item
-        label="长度"
-        name="_length"
-      >
+      <Form.Item label="长度" name="_length">
         <InputNumber
           style={{ width: '100%' }}
           formatter={value => `${value}  位`}
         />
       </Form.Item>
 
-      <Form.Item
-        label="数量"
-        name="_num"
-      >
+      <Form.Item label="数量" name="_num">
         <InputNumber
-          onChange={ val => setNum(val)}
+          onChange={val => setNum(val)}
           style={{ width: '100%' }}
           formatter={value => `${value}`}
         />
@@ -87,14 +85,8 @@ const RandomPassword = () => {
         </Button>
       </Form.Item>
 
-      <Form.Item
-        label="结果"
-        name="_result"
-      >
-        <Input.TextArea
-          rows={_num}
-          style={{ width: '100%' }}
-        />
+      <Form.Item label="结果" name="_result">
+        <Input.TextArea rows={_num} style={{ width: '100%' }} />
       </Form.Item>
     </Form>
   );

@@ -1,49 +1,21 @@
-﻿# kdiff3 ignore
-*.orig
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# maven ignore
-target/
-
-# eclipse ignore
-.settings/
-.project
-.classpath
-.history
-
-# idea ignore
-.idea/
-*.ipr
-*.iml
-*.iws
-
-# temp ignore
-*.log
-*.cache
-*.diff
-*.patch
-*.tmp
-
-# system ignore
-.DS_Store
-Thumbs.db
-
-# package ignore (optional)
-# *.jar
-# *.war
-# *.zip
-# *.tar
-# *.tar.gz
-
-node_modules/
-runtime/
-/prd/
-/dev/
-.tags
-.tags1
-tsconfig.json
-client/plugin-module.js
-.vscode
-/iconfont
+# dependencies
+/node_modules
+/npm-debug.log*
+/yarn-error.log
 /yarn.lock
+/package-lock.json
 
-src/.umi
+# production
+/dist
+
+# misc
+.DS_Store
+
+# umi
+.umi
+.umi-production
+
+.idea
+yarn.lock
