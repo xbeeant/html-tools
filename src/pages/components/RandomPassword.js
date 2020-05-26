@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, InputNumber, Button, Checkbox } from 'antd';
-
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
+import { layout, tailLayout } from '@/styles';
 
 const RandomPassword = () => {
   const [selected, setSelected] = useState([
@@ -42,7 +35,7 @@ const RandomPassword = () => {
     { label: 'a-z', value: 'abcdefghijklmnopqrstuvwxyz' },
     { label: '0-9', value: '0123456789' },
     { label: '!@#$%^&*', value: '!@#$%^&*' },
-    { label: '~!@#$%^&*()[{]}-_=+|;:\'",<.>/?`', value: '~!@#$%^&*()[{]}-_=+|;:\'",<.>/?`' },
+    { label: '~()[{]}-_=+|;:\'",<.>/?`', value: '~()[{]}-_=+|;:\'",<.>/?`' },
   ];
 
   const onChange = checkedValues => {
