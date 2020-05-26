@@ -23,7 +23,7 @@ export default {
       antd: true,
       dva: false,
       dynamicImport: { webpackChunkName: true },
-      title: 'fh-helper',
+      title: '常用开发工具',
       dll: false,
       routes: {
         exclude: [

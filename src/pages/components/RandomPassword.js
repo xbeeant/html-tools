@@ -42,6 +42,7 @@ const RandomPassword = () => {
     { label: 'a-z', value: 'abcdefghijklmnopqrstuvwxyz' },
     { label: '0-9', value: '0123456789' },
     { label: '!@#$%^&*', value: '!@#$%^&*' },
+    { label: '~!@#$%^&*()[{]}-_=+|;:\'",<.>/?`', value: '~!@#$%^&*()[{]}-_=+|;:\'",<.>/?`' },
   ];
 
   const onChange = checkedValues => {
